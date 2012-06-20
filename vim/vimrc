@@ -1,6 +1,17 @@
 " based on http://github.com/jferris/config_files/blob/master/vimrc
 " also based on Janus
 
+" Set file encodings to use utf-8 wherever possible
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+  "setglobal bomb
+  set fileencodings=ucs-bom,utf-8,latin1
+endif
+
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
