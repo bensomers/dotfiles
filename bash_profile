@@ -10,3 +10,5 @@ fi
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+
+[[ -s "/Users/bensomers/.rvm/scripts/rvm" ]] && source "/Users/bensomers/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
