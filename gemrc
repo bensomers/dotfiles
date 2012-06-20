@@ -5,7 +5,7 @@ gem: --no-ri --no-rdoc
 :sources: 
 - http://rubygems.org
 - http://gems.github.com
-- http://s3.amazonaws.com/br_custom_gem_repo/
+- http://bkr:yuxAP8pr@brgems.bookrenter.com/
 :backtrace: false
 :bulk_threshold: 1000
 :benchmark: false
