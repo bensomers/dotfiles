@@ -20,9 +20,12 @@ alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 
 # rails
-alias sc='script/console'
-alias ss='script/server'
-alias sg='script/generate'
+# alias sc='script/console'
+# alias ss='script/server'
+# alias sg='script/generate'
+alias sc='bundle exec rails console'
+alias ss='bundle exec rails server'
+alias sg='bundle exec rails generate'
 alias a='autotest -rails'
 alias tlog='tail -f log/development.log'
 alias scaffold='script/generate nifty_scaffold'

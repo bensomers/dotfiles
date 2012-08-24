@@ -76,11 +76,11 @@ else
 endif " has("autocmd")
 
 " if has("folding")
-  " set foldenable
-  " set foldmethod=syntax
-  " set foldlevel=1
-  " set foldnestmax=2
-  " set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
+"   set foldenable
+"   set foldmethod=syntax
+"   set foldlevel=1
+"   set foldnestmax=2
+"   set foldtext=strpart(getline(v:foldstart),0,50).'\\ ...\\ '.substitute(getline(v:foldend),'^[\\ #]*','','g').'\\ '
 " endif
 
 " Softtabs, 2 spaces
@@ -216,5 +216,28 @@ endfunction
 map <Leader>w :call OpenURL()<CR>
 
 "Easy empty line insertion in normal mode
-nnoremap <Return> o<Esc>k0
-nnoremap <S-Return> O<Esc>j0
+" nnoremap <Return> o<Esc>k0
+" nnoremap <S-Return> O<Esc>j0
+
+" Customize mappings for RubyTest.vim
+" map <D-R> <Plug>RubyTestRun   
+" map <D-r> <Plug>RubyFileRun    
+" map <D-i> <Plug>RubyTestRunLast
+" let g:rubytest_in_quickfix = 1
+
+" Mappings for ruby_focused_unit_test.vim
+map <silent> <Leader>rb :RunAllRubyTests<CR>
+map <silent> <Leader>rc :RunRubyFocusedContext<CR>
+map <silent> <Leader>rf :RunRubyFocusedUnitTest<CR>
+map <silent> <Leader>n :NERDTree<CR>
+
+" window
+nmap <leader>swh :topleft  vnew<CR>
+nmap <leader>swl :botright vnew<CR>
+nmap <leader>swk :topleft  new<CR>
+nmap <leader>swj :botright new<CR>
+" buffer
+nmap <leader>sh :leftabove  vnew<CR>
+nmap <leader>sl :rightbelow vnew<CR>
+nmap <leader>sk :leftabove  new<CR>
+nmap <leader>sj :rightbelow new<CR>
