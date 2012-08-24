@@ -12,6 +12,7 @@ He's primarily a zsh user, while I like bash, but I'm going to iron that out.
   If you're on OS X: git checkout osx
   If you're on Ubuntu: git checkout ubuntu
   rake install
+  optional: gem install RedCloth bluecloth github-markup ronn (for the markup-preview plugin)
 
 
 == Environment
@@ -34,7 +35,7 @@ can easily be accessed (and tab completed) with the "c" command.
 
   c railsca<tab>
 
-There is also an "h" command which behaves similar, but acts on the 
+There is also an "h" command which behaves similarly, but acts on the 
 home path.
 
   h doc<tab>
