@@ -21,7 +21,6 @@ export RUBY_HEAP_FREE_MIN=20000
 
 # Load ssh key at the start of every session (why can't OS X do this automatically?)
 ssh-add ~/.ssh/id_rsa
-ssh-add ~/.ssh/id_rsa_br
 
 # load rvm 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
