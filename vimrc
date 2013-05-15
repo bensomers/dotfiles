@@ -93,7 +93,7 @@ set softtabstop=2
 set laststatus=2
 
 " \ is the default leader character, set it to SPACEBAR instead
-let mapleader=' '
+" let mapleader=' '
 
 " Edit the README_FOR_APP (makes :R commands work)
 map <Leader>R :e doc/README_FOR_APP<CR>
