@@ -1,10 +1,10 @@
 [user]
-	name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
-	email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
+  name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
+  email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
 [github]
-	user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
+  user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
 [color]
-	ui = auto
+  ui = auto
   [color "branch"]
     current = yellow reverse
     local = yellow
@@ -19,19 +19,20 @@
     changed = green
     untracked = cyan
 [core]
-	excludesfile = <%= ENV['HOME'] %>/.gitignore
-	editor = vim
+  excludesfile = <%= ENV['HOME'] %>/.gitignore
+  editor = vim
 [apply]
-	whitespace = nowarn
+  whitespace = nowarn
 [pager]
-	status = true
-	show-branch = true
+  status = true
+  show-branch = true
 [format]
-	pretty = %C(red)%h%Creset %s %Cblue %an %C(green)(%cr)%Creset
+  pretty = %C(red)%h%Creset %s %Cblue %an %C(green)(%cr)%Creset
 [alias]
-	st = status
-	ci = commit
-	co = checkout
+  st = status
+  ci = commit
+  co = checkout
+  cp = cherry-pick
   meld = mergetool -t meld #this is a linux-native mergetool; installing it requires ports, but it's great, I can give instructions if you want
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
