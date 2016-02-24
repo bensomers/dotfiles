@@ -1,5 +1,6 @@
 if has("gui_macvim")
-  set guifont=Droid\ Sans\ Mono:h13
+  " set guifont=Droid\ Sans\ Mono:h13
+  set guifont=Hack
 
   " Fullscreen takes up entire screen
   set fuoptions=maxhorz,maxvert

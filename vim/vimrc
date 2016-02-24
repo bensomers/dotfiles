@@ -24,10 +24,14 @@ set number
 set numberwidth=5
 
 " show the cursor position all the time
-set ruler		
+set ruler
 
 " Set encoding
 set encoding=utf-8
+
+" More natural split opening
+set splitbelow
+set splitright
 
 " Whitespace stuff
 set nowrap
@@ -36,7 +40,9 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 " set list listchars=tab:\ \ ,trail:·
-" set list listchars=tab:»·,trail:·
+set list listchars=tab:»·,trail:·
+" Automatically strip trailing whitespace from selected filetypes
+autocmd FileType ruby,javascript autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Set syntax folding to automatic but unfolded by default
 " For Ruby files, have to use indent folding, syntax folding is too slow
@@ -86,8 +92,8 @@ endif
 
 function s:setupWrapping()
   set wrap
-  set wrapmargin=2
-  set textwidth=72
+  set wrapmargin=0
+  set textwidth=0
 endfunction
 
 function s:setupMarkup()
@@ -103,6 +109,9 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
+
+" add backbone JST template syntax highlighting
+au BufNewFile,BufRead *.jst.ejs set ft=html
 
 au BufRead,BufNewFile *.txt call s:setupWrapping()
 
