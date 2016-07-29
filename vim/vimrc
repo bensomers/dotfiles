@@ -12,6 +12,11 @@ if has("multi_byte")
   set fileencodings=ucs-bom,utf-8,latin1
 endif
 
+
+" don't syntax-highlight on long lines
+" it causes big performance issues
+set synmaxcol=200
+
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
