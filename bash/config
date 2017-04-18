@@ -1,3 +1,6 @@
+# For Fink
+test -r /sw/bin/init.sh && . /sw/bin/init.sh
+
 # I use both MacVim and TextMate, but prefer MacVim for general-purpose editing
 export EDITOR="mvim"
 
@@ -10,16 +13,16 @@ export GREP_COLOR='1;32'
 
 # Improve Ruby performance for Rails apps
 # Increases memory consumption and startup times for irb or lightweight scripts
-export RUBY_HEAP_MIN_SLOTS=2000000
-export RUBY_HEAP_SLOTS_INCREMENT=250000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=50000000
-export RUBY_HEAP_FREE_MIN=20000
+# export RUBY_HEAP_MIN_SLOTS=2000000
+# export RUBY_HEAP_SLOTS_INCREMENT=250000
+# export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+# export RUBY_GC_MALLOC_LIMIT=50000000
+# export RUBY_HEAP_FREE_MIN=20000
 
 # Load ssh key at the start of every session (why can't OS X do this automatically?)
 ssh-add ~/.ssh/id_rsa
 
-# load rvm 
+# load rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # increase bash command history
@@ -29,7 +32,7 @@ export HISTSIZE=100000
 # Changes some of the colors, adds ruby version naming for when
 # you're running on system ruby, adds patchlevel detection
 function __git_dirty {
-  git diff --quiet HEAD &>/dev/null 
+  git diff --quiet HEAD &>/dev/null
   [ $? == 1 ] && echo "!"
 }
 
@@ -45,7 +48,7 @@ function __my_system_ruby_version {
 function __my_rvm_ruby_version {
   local gemset=$(echo $GEM_HOME | awk -F'@' '{print $2}')
   [ "$gemset" != "" ] && gemset="@$gemset"
-  local version=$(echo $MY_RUBY_HOME | awk -F'\/' '{print $6}')
+  local version=$(echo $MY_RUBY_HOME | awk -F'/' '{print $6}')
   # local version=$(echo $MY_RUBY_HOME | awk -F'-' '{print $2"-"$3}')
   [ "$version" == "-" ] && version="$(__my_system_ruby_version)"
   local full="$version$gemset"
