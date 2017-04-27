@@ -12,7 +12,10 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 
-[[ -s "/Users/bensomers/.rvm/scripts/rvm" ]] && source "/Users/bensomers/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# IF USING RVM
+# [[ -s "/Users/bensomers/.rvm/scripts/rvm" ]] && source "/Users/bensomers/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# IF USING RBENV
+eval "$(rbenv init -)"
 
 # source "/Library/Frameworks/Python.framework/Versions/3.3/bin/virtualenvwrapper.sh"
 

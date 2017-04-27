@@ -126,6 +126,9 @@ au BufRead,BufNewFile *.txt call s:setupWrapping()
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+" use Ag instead of Ack
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 " load the plugin and indent settings for the detected filetype
 filetype plugin indent on
 

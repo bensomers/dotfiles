@@ -115,6 +115,7 @@
 :NERDTreeFromBookmark	NERD_tree.txt	/*:NERDTreeFromBookmark*
 :NERDTreeMirror	NERD_tree.txt	/*:NERDTreeMirror*
 :NERDTreeToggle	NERD_tree.txt	/*:NERDTreeToggle*
+:Obsession	obsession.txt	/*:Obsession*
 :SyntasticDisable	syntastic.txt	/*:SyntasticDisable*
 :SyntasticEnable	syntastic.txt	/*:SyntasticEnable*
 :TComment	tComment.txt	/*:TComment*
@@ -239,6 +240,7 @@ NERDTreeOptions	NERD_tree.txt	/*NERDTreeOptions*
 NERDTreeRender()	NERD_tree.txt	/*NERDTreeRender()*
 NERD_commenter.txt	NERD_commenter.txt	/*NERD_commenter.txt*
 NERD_tree.txt	NERD_tree.txt	/*NERD_tree.txt*
+ObsessionStatus()	obsession.txt	/*ObsessionStatus()*
 PreviewBrowsers	preview.txt	/*PreviewBrowsers*
 PreviewBugs	preview.txt	/*PreviewBugs*
 PreviewCSSPath	preview.txt	/*PreviewCSSPath*
@@ -692,6 +694,9 @@ largefile-history	LargeFile.txt	/*largefile-history*
 list-snippets	snipMate.txt	/*list-snippets*
 macros/rails.vim	rails.txt	/*macros\/rails.vim*
 multi_snip	snipMate.txt	/*multi_snip*
+obsession	obsession.txt	/*obsession*
+obsession-status	obsession.txt	/*obsession-status*
+obsession.txt	obsession.txt	/*obsession.txt*
 preview.txt	preview.txt	/*preview.txt*
 ragtag	ragtag.txt	/*ragtag*
 ragtag-CTRL-V_%	ragtag.txt	/*ragtag-CTRL-V_%*
