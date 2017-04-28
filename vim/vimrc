@@ -1,6 +1,11 @@
 " based on http://github.com/jferris/config_files/blob/master/vimrc
 " also based on Janus
 
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+filetype off
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -13,15 +18,27 @@ Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'junegunn/fzf' ", { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'vim-ruby/vim-ruby', {'for': 'ruby'} " Ruby linter
 Plugin 'tpope/vim-fugitive' " Git stuff
-Plugin 'vim-syntastic/syntastic' " Linting
 Plugin 'ervandew/supertab' " Tab completion
+Plugin 'mileszs/ack.vim' " ack/ag integration
+Plugin 'xolox/vim-misc' " Auto-ctagging
+Plugin 'xolox/vim-easytags' " Auto-ctagging
+Plugin 'scrooloose/nerdtree' " file drawer
+Plugin 'scrooloose/nerdcommenter' " comment tools
+Plugin 'ngmy/vim-rubocop' " rubocop integration
+Plugin 'vim-syntastic/syntastic' " Linting
 
+call vundle#end()            " required
+
+" workaround for NERDTree bugs WTF
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeGlyphReadOnly = "RO"
 
 
 " Ctrl-P config
 " use ctrlp-py-matcher
 " let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-
 
 
 " Set file encodings to use utf-8 wherever possible
@@ -39,10 +56,6 @@ endif
 " don't syntax-highlight on long lines
 " it causes big performance issues
 set synmaxcol=200
-
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
 
 " \ is the default leader character, set it to SPACEBAR instead
 let mapleader=','
@@ -153,7 +166,10 @@ au BufRead,BufNewFile *.txt call s:setupWrapping()
 set backspace=indent,eol,start
 
 " use Ag instead of Ack
-let g:ackprg = 'ag --nogroup --nocolor --column'
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+  " let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
 
 " load the plugin and indent settings for the detected filetype
 filetype plugin indent on
@@ -187,7 +203,7 @@ imap <C-l> <Space>=><Space>
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
-let g:syntastic_quiet_warnings=1
+let g:syntastic_quiet_messages = {'level': 'warnings'}
 
 " gist-vim defaults
 if has("mac")
@@ -203,7 +219,7 @@ set modeline
 set modelines=10
 
 " Default color scheme
-color desert
+" color desert
 
 " Directories for swp files
 set backupdir=~/.vim/backup
