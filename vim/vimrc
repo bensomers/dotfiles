@@ -20,8 +20,8 @@ Plugin 'vim-ruby/vim-ruby', {'for': 'ruby'} " Ruby linter
 Plugin 'tpope/vim-fugitive' " Git stuff
 Plugin 'ervandew/supertab' " Tab completion
 Plugin 'mileszs/ack.vim' " ack/ag integration
-Plugin 'xolox/vim-misc' " Auto-ctagging
-Plugin 'xolox/vim-easytags' " Auto-ctagging
+" Plugin 'xolox/vim-misc' " Auto-ctagging
+" Plugin 'xolox/vim-easytags' " Auto-ctagging
 Plugin 'scrooloose/nerdtree' " file drawer
 Plugin 'scrooloose/nerdcommenter' " comment tools
 Plugin 'ngmy/vim-rubocop' " rubocop integration
