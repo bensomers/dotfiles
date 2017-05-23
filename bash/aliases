@@ -9,5 +9,9 @@ function railsapp {
   rails $appname -m http://github.com/ryanb/rails-templates/raw/master/$template.rb $@
 }
 
+function scssh {
+  sc-ssh-wrapper "$@"
+}
+
 # misc
 alias reload='. ~/.bash_profile'
