@@ -26,6 +26,7 @@ Plugin 'scrooloose/nerdtree' " file drawer
 Plugin 'scrooloose/nerdcommenter' " comment tools
 Plugin 'ngmy/vim-rubocop' " rubocop integration
 Plugin 'vim-syntastic/syntastic' " Linting
+Plugin 'fatih/vim-go' " Go support
 
 call vundle#end()            " required
 
