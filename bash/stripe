@@ -1,0 +1,10 @@
+# add henson deploy tool to PATH
+export HENSONPATH="/Users/brs/stripe/henson/bin"
+export PATH="$PATH:$HENSONPATH"
+
+
+# alias ssh wrapper that does 2FA
+function scssh {
+  sc-ssh-wrapper "$@"
+}
+
