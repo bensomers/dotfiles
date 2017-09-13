@@ -38,5 +38,7 @@
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
   br = branch
   pup = !sh -c 'git pull $1 $2 && git push $1 $2' -
+  pupstream = push -u origin HEAD
   cop = !sh -c 'git checkout $1 && git pull' -
+  chfiles = !sh -c 'git diff --name-only ${1-`git rev-parse --abbrev-ref HEAD`} $(git merge-base ${1-`git rev-parse --abbrev-ref HEAD`} ${2:-master})'
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold cyan)<%an>%Creset' --abbrev-commit --date=relative 

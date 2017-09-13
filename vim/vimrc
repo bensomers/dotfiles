@@ -18,15 +18,17 @@ Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'junegunn/fzf' ", { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'vim-ruby/vim-ruby', {'for': 'ruby'} " Ruby linter
 Plugin 'tpope/vim-fugitive' " Git stuff
-Plugin 'ervandew/supertab' " Tab completion
+" Plugin 'ervandew/supertab' " Tab completion
 Plugin 'mileszs/ack.vim' " ack/ag integration
 " Plugin 'xolox/vim-misc' " Auto-ctagging
 " Plugin 'xolox/vim-easytags' " Auto-ctagging
 Plugin 'scrooloose/nerdtree' " file drawer
 Plugin 'scrooloose/nerdcommenter' " comment tools
 Plugin 'ngmy/vim-rubocop' " rubocop integration
-Plugin 'vim-syntastic/syntastic' " Linting
+" Plugin 'vim-syntastic/syntastic' " Linting
 Plugin 'fatih/vim-go' " Go support
+" Plugin 'w0rp/ale' " better linting
+Plugin 'itchyny/lightline.vim' " status line
 
 call vundle#end()            " required
 
@@ -36,6 +38,22 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeGlyphReadOnly = "RO"
 
+" ALE configs
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_enter = 0
+" " let g:airline#extensions#ale#enabled = 1
+" let g:ale_open_list = 1
+
+" lightline configs
+let g:lightline = {
+  \ 'colorscheme': 'wombat',
+  \ 'component_function': {
+  \   'filename': 'LightLineFilename'
+  \ }
+  \ }
+function! LightLineFilename()
+  return expand('%')
+endfunction
 
 " Ctrl-P config
 " use ctrlp-py-matcher
@@ -99,7 +117,8 @@ set smartcase
 
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,.svg,vendor/gems/*
+
 
 " Status bar
 set laststatus=2
@@ -118,6 +137,7 @@ map <Leader>n :NERDTreeToggle<CR>
 
 " Command-T configuration
 let g:CommandTMaxHeight=20
+let g:CommandTWildIgnore=&wildignore . ",build/**/**"
 
 " ZoomWin configuration
 map <Leader><Leader> :ZoomWin<CR>

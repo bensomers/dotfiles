@@ -9,8 +9,12 @@ function railsapp {
   rails $appname -m http://github.com/ryanb/rails-templates/raw/master/$template.rb $@
 }
 
-function scssh {
-  sc-ssh-wrapper "$@"
+function title {
+  echo -ne "\033k"$*"\033\\"
+}
+
+function cop {
+  bundle exec rubocop `git chfiles`
 }
 
 # misc

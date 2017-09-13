@@ -1,3 +1,9 @@
+# # IF USING RVM
+# two different cmds here, because I have used different usernames on different machines
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# # IF USING RBENV
+eval "$(rbenv init -)"
+
 # For Fink
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 
@@ -19,11 +25,8 @@ export GREP_COLOR='1;32'
 # export RUBY_GC_MALLOC_LIMIT=50000000
 # export RUBY_HEAP_FREE_MIN=20000
 
-# Load ssh key at the start of every session (why can't OS X do this automatically?)
+# Load ssh key at the start of every session (why doesn't OS X do this automatically?)
 ssh-add ~/.ssh/id_rsa
-
-# load rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # increase bash command history
 export HISTSIZE=100000
