@@ -1,10 +1,24 @@
 # add henson deploy tool to PATH
-export HENSONPATH="/Users/brs/stripe/henson/bin"
+export HENSONPATH="$HOME/stripe/henson/bin"
 export PATH="$PATH:$HENSONPATH"
 
+# add space commander to PATH
+export SPACECOMMANDERPATH="$HOME/stripe/space-commander/bin"
+export PATH="$PATH:$SPACECOMMANDERPATH"
+
+# add password vault to PATH
+export PASSWORDVAULTPATH="$HOME/stripe/password-vault/bin"
+export PATH="$PATH:$PASSWORDVAULTPATH"
+
+# add gopiori scripts to path
+export GOPIORI_PATH="$GOPATH/src/github.com/apiori/gopiori/scripts/bin"
+export PATH="$PATH:$GOPIORI_PATH"
 
 # alias ssh wrapper that does 2FA
 function scssh {
   sc-ssh-wrapper "$@"
 }
 
+function devbox {
+  cd ~/stripe/pay-server && scssh $(~/stripe/pay-server/scripts/bin/devbox.rb --dynamic which)
+}

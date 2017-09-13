@@ -119,6 +119,9 @@ set smartcase
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,.svg,vendor/gems/*
 
+" Stripe-specific (gross)
+set wildignore+=build/autoloader
+
 
 " Status bar
 set laststatus=2
