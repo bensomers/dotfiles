@@ -18,17 +18,18 @@ Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'junegunn/fzf' ", { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'vim-ruby/vim-ruby', {'for': 'ruby'} " Ruby linter
 Plugin 'tpope/vim-fugitive' " Git stuff
-" Plugin 'ervandew/supertab' " Tab completion
+Plugin 'ervandew/supertab' " Tab completion
 Plugin 'mileszs/ack.vim' " ack/ag integration
 " Plugin 'xolox/vim-misc' " Auto-ctagging
 " Plugin 'xolox/vim-easytags' " Auto-ctagging
 Plugin 'scrooloose/nerdtree' " file drawer
 Plugin 'scrooloose/nerdcommenter' " comment tools
 Plugin 'ngmy/vim-rubocop' " rubocop integration
-" Plugin 'vim-syntastic/syntastic' " Linting
+Plugin 'vim-syntastic/syntastic' " Linting
 Plugin 'fatih/vim-go' " Go support
 " Plugin 'w0rp/ale' " better linting
 Plugin 'itchyny/lightline.vim' " status line
+Plugin 'ludovicchabant/vim-gutentags' " automatic ctag regeneration
 
 call vundle#end()            " required
 
