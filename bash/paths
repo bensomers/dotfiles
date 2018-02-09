@@ -4,6 +4,9 @@ PATH="~/bin:~/.bin:/usr/local/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/l
 
 # PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+# added for GPG agent
+PATH="/usr/local/homebrew/opt/gpg-agent/bin:$PATH"
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
