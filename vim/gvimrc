@@ -14,7 +14,7 @@ if has("gui_macvim")
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
 
   " Command-Shift-F for Ack
-  map <D-F> :Ack<space>--nofollow<space>
+  map <D-F> :Ack 
 
   " Command-/ to toggle comments
   map <D-/> <plug>NERDCommenterToggle<CR>
