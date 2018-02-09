@@ -17,6 +17,9 @@ alias ls='ls -G'
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 
+# defaults for fzf with ripgrep
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-messages --glob "!.git/*"'
+
 # Improve Ruby performance for Rails apps
 # Increases memory consumption and startup times for irb or lightweight scripts
 # export RUBY_HEAP_MIN_SLOTS=2000000
