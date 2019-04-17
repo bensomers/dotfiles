@@ -9,12 +9,75 @@ function railsapp {
   rails $appname -m http://github.com/ryanb/rails-templates/raw/master/$template.rb $@
 }
 
+# iterm2 command to change tab title
 function title {
   echo -ne "\033k"$*"\033\\"
 }
 
+# iterm2 commands to change tab color
+tab-color() {
+    echo -ne "\033]6;1;bg;red;brightness;$1\a"
+    echo -ne "\033]6;1;bg;green;brightness;$2\a"
+    echo -ne "\033]6;1;bg;blue;brightness;$3\a"
+}
+tab-reset() {
+    echo -ne "\033]6;1;bg;*;default\a"
+}
+
+function color {
+  case $1 in
+  red)
+    tab-color 234 115 104
+    ;;
+  orange)
+    tab-color 236 174 91
+    ;;
+  yellow)
+    tab-color 237 219 104
+    ;;
+  tahuna)
+    tab-color 233 241 203
+    ;;
+  green)
+    tab-color 188 212 97
+    ;;
+  grey)
+    tab-color 124 123 123
+    ;;
+  iceberg)
+    tab-color 203 241 233
+    ;;
+  blue)
+    tab-color 111 162 242
+    ;;
+  moonraker)
+    tab-color 214 203 241
+    ;;
+  purple)
+    tab-color 185 146 212
+    ;;
+  lilac)
+    tab-color 236 203 241
+    ;;
+  white)
+    tab-color 255 255 255
+    ;;
+  default)
+    tab-reset
+    ;;
+  *)
+    tab-color $1 $2 $3
+    ;;
+  esac
+}
+
 function cop {
   bundle exec rubocop `git chfiles`
+}
+
+function mfa {
+  ACCOUNT_ID=${1:-340143329864}
+  aws-mfa --profile=terraform --assume-role=arn:aws:iam::$ACCOUNT_ID:role/Adapt_Admins --force
 }
 
 # misc

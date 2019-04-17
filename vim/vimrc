@@ -13,12 +13,15 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
+
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'FelikZ/ctrlp-py-matcher'
 
+" Ctrl-p for fuzzy-finding
+Plugin 'kien/ctrlp.vim' 
+Plugin 'FelikZ/ctrlp-py-matcher'
 " set rtp+=~/.fzf
 " Plugin 'junegunn/fzf.vim' " only opens fzf in an external window :/
 
@@ -36,6 +39,10 @@ Plugin 'fatih/vim-go' " Go support
 " Plugin 'w0rp/ale' " better linting - disabled for crashes
 Plugin 'itchyny/lightline.vim' " status line
 Plugin 'ludovicchabant/vim-gutentags' " automatic ctag regeneration
+Plugin 'b4b4r07/vim-hcl' " HCL highlighting (for terraform)
+Plugin 'hashivim/vim-terraform' " terraform integration & syntax
+Plugin 'juliosueiras/vim-terraform-completion' " terraform completion & ctags
+Plugin 'airblade/vim-gitgutter' " git status displayed in vim gutter
 
 call vundle#end()            " required
 
@@ -112,7 +119,7 @@ set expandtab
 " set list listchars=tab:\ \ ,trail:·
 set list listchars=tab:»·,trail:·
 " Automatically strip trailing whitespace from selected filetypes
-autocmd FileType ruby,javascript autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType ruby,python,javascript autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Set syntax folding to automatic but unfolded by default
 " For Ruby files, have to use indent folding, syntax folding is too slow
@@ -139,6 +146,10 @@ set laststatus=2
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+
+" run `terraform fmt` on save when working in terraform
+let g:terraform_fmt_on_save = 1
+
 " Without setting this, ZoomWin restores windows in a way that causes
 " equalalways behavior to be triggered the next time CommandT is used.
 " This is likely a bludgeon to solve some other issue, but it works
@@ -147,6 +158,9 @@ set noequalalways
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
+" set variables NERDTree wants to reference later
+" this should be done by the plugin, not sure why it's not
+let g:NERDTreeNodeDelimiter = "\x07"
 
 " Command-T configuration
 let g:CommandTMaxHeight=20
@@ -214,10 +228,10 @@ endif
 
 
 " use Ag instead of Ack
-" if executable('ag')
-"   let g:ackprg = 'ag --vimgrep'
-  " let g:ackprg = 'ag --nogroup --nocolor --column'
-" endif
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
 
 " Use Ack instead of Grep when available
 " if executable("ack")
