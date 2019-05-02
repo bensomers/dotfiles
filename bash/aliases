@@ -76,8 +76,9 @@ function cop {
 }
 
 function mfa {
-  ACCOUNT_ID=${1:-340143329864}
-  aws-mfa --profile=terraform --assume-role=arn:aws:iam::$ACCOUNT_ID:role/Adapt_Admins --force
+  PROFILE=${1:-terraform}
+  ACCOUNT_ID=${2:-340143329864}
+  aws-mfa --profile=$PROFILE --assume-role=arn:aws:iam::$ACCOUNT_ID:role/Adapt_Admins --force --duration 28800
 }
 
 # misc
