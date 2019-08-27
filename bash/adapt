@@ -1,0 +1,4 @@
+export TF_VAR_BASTION_USER=ben.somers
+export TF_VAR_BASTION_SSH_KEY=/Users/45737/.ssh/id_rsa
+export TF_VAR_bastion_user=ben.somers
+export TF_VAR_bastion_ssh_key=/Users/45737/.ssh/id_rsa
