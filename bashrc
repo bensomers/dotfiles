@@ -2,6 +2,7 @@ source ~/.bash/aliases
 source ~/.bash/completions
 source ~/.bash/paths
 source ~/.bash/config
+source ~/.bash/adapt
 # source ~/.bash/stripe
 
 # use .localrc for settings specific to one system
