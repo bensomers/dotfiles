@@ -43,6 +43,7 @@ Plugin 'b4b4r07/vim-hcl' " HCL highlighting (for terraform)
 Plugin 'hashivim/vim-terraform' " terraform integration & syntax
 Plugin 'juliosueiras/vim-terraform-completion' " terraform completion & ctags
 Plugin 'airblade/vim-gitgutter' " git status displayed in vim gutter
+Plugin 'ycm-core/YouCompleteMe' " Python autocomplete
 
 call vundle#end()            " required
 

@@ -1,10 +1,12 @@
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
 if [[ -n $SSH_CONNECTION ]]; then
   export PS1='%m:%3~$(git_info_for_prompt)%# '
 else
   export PS1='%3~$(git_info_for_prompt)%# '
 fi
 
-export EDITOR='mate_wait'
+export EDITOR='mvim'
 export PATH="$HOME/bin:$HOME/.bin:/usr/local/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 
@@ -12,10 +14,18 @@ fpath=(~/.zsh/functions $fpath)
 
 autoload -U ~/.zsh/functions/*(:t)
 
+# add color to ls
+alias ls='ls -G'
+
+# To set grep to permanently colorize matches
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;32'
+
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 REPORTTIME=10 # print elapsed time when more than 10 seconds
+ZSH_THEME="spaceship" 
 
 setopt NO_BG_NICE # don't nice background tasks
 setopt NO_HUP
